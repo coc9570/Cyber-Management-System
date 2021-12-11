@@ -1,0 +1,71 @@
+Group 7 Cyber Management - Presenting at 12:00 PM (Noon) on Friday 12/11/20 (Submit code/files by Thursday pref. In Evening or ASAP)
+Members: Paige Arnold, Alyssa Capehart, Kyle Martin Jurilla, & Jasmine Wilson
+Please refer to the google doc, will update it live there
+
+We will connect here, arrive early probably 5-10 minutes before our presentation time
+Join Zoom Meeting:
+https://us04web.zoom.us/j/2307408893?pwd=T0VoSE1ObEExQnMrbCt4SU9wY0hsUT09
+
+Meeting ID: 230 740 8893
+Passcode: Tf62TD
+Demo runtime: At least 30 minutes, 3-5 minutes per member in private
+
+
+Original Objective:
+A C project for cyber cafes and computer centers. It helps to provide access to the user such as
+login etc. There are two parts of the project I.e. client and server. The server is for managing
+client requests. Client for giving access to client services. 
+
+Disclaimer from Prof: “It is just checking the log in but does not provide any other information! How many users are in the system, how much credit they have, how to check the security, how to keep track of the information being used, how to add a new user, how to remove a user! These are the parts that each client server require. You definitely can add more features to make it even stronger but that would be up to you. Note: We defined this as a group project to be a complete client server system. Please make sure that your system is comprehensive enough to be used for a pilot study.”
+
+Completed from disclaimer [4/5]: Knows how many users in the system, how much credit they have, how to keep track of information (clients.txt), how to add a new user, how to remove a user (WIP)
+
+
+Objective -  What our codes does
+Pulls from a record, clients.txt, of the users (ID, first name, last name, password, and their credit ($40, etc.)
+
+Features a client request access window to the system by greeting the user and prompting them to proceed on whether they are an admin or user. 
+If a user, then it will ask if they are an existing user or not. (Y/N)
+If an existing user, they will then be prompted to log in with their id and password and if correct will then be prompted to gain access.
+If not an existing user, then the user will set up a new account (this will then append the new user’s information to the bottom of the clients.txt file) 
+The client window then contacts the server window/file. 
+
+Features a server window that opens the record and checks if the client is in the list or not. Able to check user id, credit, full name (incl. First and last name).
+It will first ask if the user is an admin or user, if admin then it will ask for administrative password
+Admin has ability to add users, remove users (WIP), user count, credit check (WIP)
+If not admin, then proceed with U (user). From here, they will be asked to insert a user ID and then password.
+The server window will then check their account to see if it exists. If it exists, the user would then be granted to use the “machine” (terminal).
+If it does not exist, they will then be prompted to create/register an account. 
+
+
+How we built it (Demo, dive deeper into code here, key features)
+Client window (Prof. will run this or we can screen share and showcase)
+int login(void)
+int main(void)
+
+Server window
+int server(int user_ID, char pwd[30])
+int admin(char apwd[30]) 
+  Admin window
+int user_count(void)
+int credit_check(int user)
+int add_user(void)
+int remove_user() (WIP)
+Clients.txt (how it works with the server and how server works with client)
+
+Key Features
+
+
+Challenges we ran into
+There was no way to actually delete a user, the intended method we attempted was to have the system create a new file and ignore the user that was supposed to be deleted. The new file would then be used and the old file with the user that was deleted would no longer be used.
+Since you can only search and delete lines in the txt file, we needed to find a way to delete the exact user by pinpointing their user id. 
+ Randomized user ids (maybe remove) 
+A lot of repetitive code with opening / scanning clients.txt file.
+
+What we learned/used from class (Might be some bonus points to throw in, maybe?)
+strcmp (compare strings)
+Fgets, fscanf, fprintf, puts
+File processing, file in/out
+opening/closing files
+Switches and cases
+If, else
